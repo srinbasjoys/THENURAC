@@ -1,0 +1,105 @@
+import React from 'react';
+import { Facebook, Instagram } from 'lucide-react';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+
+const Footer = () => {
+  return (
+    <footer className="bg-white border-t border-gray-200 mt-20">
+      {/* Features Section */}
+      <div className="border-b border-gray-200 py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <h3 className="text-sm font-medium mb-2">India Proud</h3>
+              <p className="text-xs text-gray-600">Women led brand, homegrown slow fashion brand.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-medium mb-2">CUSTOMER SUPPORT</h3>
+              <p className="text-xs text-gray-600">Available from Monday to Saturday, 10 am to 7 pm.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-medium mb-2">FREE SHIPPING</h3>
+              <p className="text-xs text-gray-600">Free shipping & more perks on all Prepaid Orders.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-medium mb-2">Secure payments</h3>
+              <p className="text-xs text-gray-600">Safer, faster, and more secure online payment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer */}
+      <div className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {/* About the Brand */}
+            <div>
+              <h3 className="text-sm font-semibold tracking-wider mb-4">ABOUT THE BRAND</h3>
+              <h4 className="text-lg font-medium mb-2">THENURA</h4>
+              <p className="text-xs text-gray-600 mb-2">/θəˈnʊrə/</p>
+              <p className="text-xs text-gray-600 leading-relaxed">
+                verb: to care for, pamper & indulge.
+              </p>
+              <p className="text-xs text-gray-600 leading-relaxed mt-3">
+                Founded by two-sisters in New Delhi, the brand offers timeless classics & elevated essentials that transcend seasonal trends.
+              </p>
+              <div className="flex space-x-4 mt-6">
+                <a href="#" className="text-gray-600 hover:text-[#9b8676] transition-colors">
+                  <Facebook size={20} />
+                </a>
+                <a href="#" className="text-gray-600 hover:text-[#9b8676] transition-colors">
+                  <Instagram size={20} />
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-sm font-semibold tracking-wider mb-4">QUICK LINKS</h3>
+              <ul className="space-y-2 text-xs text-gray-600">
+                <li><a href="#" className="hover:text-[#9b8676] transition-colors">Shop All</a></li>
+                <li><a href="#" className="hover:text-[#9b8676] transition-colors">FAQs</a></li>
+                <li><a href="#" className="hover:text-[#9b8676] transition-colors">Shipping Policy</a></li>
+                <li><a href="#" className="hover:text-[#9b8676] transition-colors">Refund policy</a></li>
+                <li><a href="#" className="hover:text-[#9b8676] transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-[#9b8676] transition-colors">Terms & Conditions</a></li>
+                <li><a href="#" className="hover:text-[#9b8676] transition-colors">Terms of Service</a></li>
+              </ul>
+            </div>
+
+            {/* Newsletter */}
+            <div>
+              <h3 className="text-sm font-semibold tracking-wider mb-4">NEWSLETTER</h3>
+              <p className="text-xs text-gray-600 mb-4">
+                Subscribe to receive updates, access to exclusive offers, and more.
+              </p>
+              <div className="flex flex-col space-y-2">
+                <Input
+                  type="email"
+                  placeholder="E-mail"
+                  className="text-xs"
+                />
+                <Button className="bg-[#9b8676] hover:bg-[#8a7969] text-white tracking-wider">
+                  SUBSCRIBE
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Footer */}
+      <div className="border-t border-gray-200 py-6">
+        <div className="container mx-auto px-4">
+          <p className="text-xs text-gray-500 text-center">
+            © 2026 - THENURA CLOTHING
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
