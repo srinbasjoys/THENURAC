@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { User, Search, ShoppingBag, Menu, X } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { getCartCount } = useCart();
+  const navigate = useNavigate();
 
   const navItems = [
-    { label: 'NEW ARRIVALS', path: '/new-arrivals' },
-    { label: 'BEST SELLERS', path: '/best-sellers' },
+    { label: 'NEW ARRIVALS', path: '/shop?category=new' },
+    { label: 'BEST SELLERS', path: '/shop?category=bestsellers' },
     { label: 'CELEBS', path: '/celebs' },
     { label: 'SHOP', path: '/shop' },
     { label: 'TOTE BAGS', path: '/tote-bags' },
-    { label: 'SALE', path: '/sale' },
+    { label: 'SALE', path: '/shop?category=sale' },
     { label: "FOUNDERS' EDIT", path: '/founders-edit' },
     { label: 'ABOUT US', path: '/about' }
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white">
+    <header className="sticky top-0 z-50 bg-white shadow-sm">
       {/* Announcement Bar */}
       <div className="bg-[#9b8676] text-white text-center py-2 text-sm tracking-wider">
         HAPPY NEW YEAR 2026!
@@ -58,17 +61,28 @@ const Header = () => {
 
             {/* Right Icons */}
             <div className="flex items-center space-x-4">
-              <button className="hover:text-[#9b8676] transition-colors">
+              <button 
+                onClick={() => navigate('/profile')}
+                className="hover:text-[#9b8676] transition-colors"
+              >
                 <User size={20} />
               </button>
-              <button className="hover:text-[#9b8676] transition-colors">
+              <button 
+                onClick={() => navigate('/search')}
+                className="hover:text-[#9b8676] transition-colors"
+              >
                 <Search size={20} />
               </button>
-              <button className="hover:text-[#9b8676] transition-colors relative">
+              <button 
+                onClick={() => navigate('/cart')}
+                className="hover:text-[#9b8676] transition-colors relative"
+              >
                 <ShoppingBag size={20} />
-                <span className="absolute -top-2 -right-2 bg-[#9b8676] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                  0
-                </span>
+                {getCartCount() > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-[#9b8676] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {getCartCount()}
+                  </span>
+                )}
               </button>
             </div>
           </div>
