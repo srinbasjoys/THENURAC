@@ -10,6 +10,8 @@ import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
 import Search from "./pages/Search";
 import ProductDetail from "./pages/ProductDetail";
+import About from "./pages/About";
+import Celebs from "./pages/Celebs";
 
 function App() {
   return (
@@ -24,13 +26,13 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/search" element={<Search />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/celebs" element={<Celebs />} />
             <Route path="/new-arrivals" element={<Shop />} />
             <Route path="/best-sellers" element={<Shop />} />
-            <Route path="/celebs" element={<Home />} />
             <Route path="/tote-bags" element={<Shop />} />
             <Route path="/sale" element={<Shop />} />
             <Route path="/founders-edit" element={<Shop />} />
-            <Route path="/about" element={<Home />} />
           </Routes>
           <Footer />
           <Toaster />
