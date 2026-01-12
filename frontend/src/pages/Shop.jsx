@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { newArrivals, bestSellers, lastChance } from '../mockData';
-import { Button } from '../components/ui/button';
 
 const Shop = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchParams] = useSearchParams();
   const [sortBy, setSortBy] = useState('featured');
   const allProducts = [...newArrivals, ...bestSellers, ...lastChance];
-
-  const categories = [
-    { id: 'all', label: 'All Products' },
-    { id: 'new', label: 'New Arrivals' },
-    { id: 'bestsellers', label: 'Best Sellers' },
-    { id: 'sale', label: 'Sale' },
-  ];
+  
+  // Get category from URL query parameter
+  const categoryParam = searchParams.get('category') || 'all';
 
   const getFilteredProducts = () => {
     let products = [...allProducts];
 
-    if (selectedCategory === 'new') {
+    // Filter by category from URL
+    if (categoryParam === 'new') {
       products = newArrivals;
-    } else if (selectedCategory === 'bestsellers') {
+    } else if (categoryParam === 'bestsellers') {
       products = bestSellers;
-    } else if (selectedCategory === 'sale') {
+    } else if (categoryParam === 'sale') {
       products = lastChance;
     }
 
+    // Sort products
     if (sortBy === 'price-low') {
       products.sort((a, b) => a.price - b.price);
     } else if (sortBy === 'price-high') {
@@ -36,30 +34,34 @@ const Shop = () => {
   };
 
   const filteredProducts = getFilteredProducts();
+  
+  // Get page title based on category
+  const getPageTitle = () => {
+    switch(categoryParam) {
+      case 'new':
+        return 'New Arrivals';
+      case 'bestsellers':
+        return 'Best Sellers';
+      case 'sale':
+        return 'Sale';
+      default:
+        return 'Shop All';
+    }
+  };
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-light tracking-wider mb-8">Shop All</h1>
+      <h1 className="text-3xl font-light tracking-wider mb-8">{getPageTitle()}</h1>
 
-      {/* Filters */}
-      <div className="flex flex-wrap gap-4 mb-8 justify-between items-center">
-        <div className="flex flex-wrap gap-2">
-          {categories.map((cat) => (
-            <Button
-              key={cat.id}
-              variant={selectedCategory === cat.id ? 'default' : 'outline'}
-              onClick={() => setSelectedCategory(cat.id)}
-              className={selectedCategory === cat.id ? 'bg-[#9b8676] hover:bg-[#8a7969]' : ''}
-            >
-              {cat.label}
-            </Button>
-          ))}
-        </div>
-
+      {/* Sort Options */}
+      <div className="flex justify-between items-center mb-8">
+        <p className="text-gray-600">
+          {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
+        </p>
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="px-4 py-2 border border-gray-300 rounded-md"
+          className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9b8676]"
         >
           <option value="featured">Featured</option>
           <option value="price-low">Price: Low to High</option>
