@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Search as SearchIcon } from 'lucide-react';
 import { Input } from '../components/ui/input';
 import ProductCard from '../components/ProductCard';
@@ -7,7 +7,7 @@ import { newArrivals, bestSellers, lastChance } from '../mockData';
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const allProducts = [...newArrivals, ...bestSellers, ...lastChance];
+  const allProducts = useMemo(() => [...newArrivals, ...bestSellers, ...lastChance], []);
 
   useEffect(() => {
     if (searchQuery.trim() === '') {
@@ -19,7 +19,7 @@ const Search = () => {
       product.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setSearchResults(filtered);
-  }, [searchQuery]);
+  }, [searchQuery, allProducts]);
 
   return (
     <div className="container mx-auto px-4 py-12">
