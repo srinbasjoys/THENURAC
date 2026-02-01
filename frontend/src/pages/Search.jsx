@@ -22,24 +22,24 @@ const Search = () => {
   }, [searchQuery, allProducts]);
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12 bg-cosset-cream min-h-screen">
       <div className="max-w-2xl mx-auto mb-12">
-        <h1 className="text-3xl font-light tracking-wider text-center mb-8">Search Products</h1>
+        <h1 className="text-3xl font-light tracking-wider text-center mb-8 text-cosset-dark-brown">Search Products</h1>
         <div className="relative">
-          <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+          <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-cosset-text/50" size={20} />
           <Input
             type="text"
             placeholder="Search for products..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 py-6 text-lg"
+            className="pl-10 py-6 text-lg border-cosset-tan bg-white"
           />
         </div>
       </div>
 
       {searchQuery && (
         <div className="mb-6">
-          <p className="text-gray-600">
+          <p className="text-cosset-text/70">
             {searchResults.length} result{searchResults.length !== 1 ? 's' : ''} found for "{searchQuery}"
           </p>
         </div>
@@ -53,11 +53,11 @@ const Search = () => {
         </div>
       ) : searchQuery ? (
         <div className="text-center py-20">
-          <p className="text-gray-600 text-lg">No products found matching your search.</p>
+          <p className="text-cosset-text/70 text-lg">No products found matching your search.</p>
         </div>
       ) : (
         <div className="text-center py-20">
-          <p className="text-gray-600 text-lg">Start typing to search for products.</p>
+          <p className="text-cosset-text/70 text-lg">Start typing to search for products.</p>
         </div>
       )}
     </div>

@@ -25,9 +25,9 @@ const Celebs = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-light tracking-wider text-center mb-4">Celebrity Style</h1>
-      <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+    <div className="container mx-auto px-4 py-12 bg-cosset-cream min-h-screen">
+      <h1 className="text-3xl font-light tracking-wider text-center mb-4 text-cosset-dark-brown">Celebrity Style</h1>
+      <p className="text-center text-cosset-text/70 mb-12 max-w-2xl mx-auto">
         See how celebrities and influencers style their favorite TheNura pieces
       </p>
 
@@ -41,8 +41,8 @@ const Celebs = () => {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <h3 className="font-medium text-center mb-2">{celeb.name}</h3>
-            <p className="text-sm text-gray-600 text-center">wearing {celeb.product}</p>
+            <h3 className="font-medium text-center mb-2 text-cosset-text">{celeb.name}</h3>
+            <p className="text-sm text-cosset-text/70 text-center">wearing {celeb.product}</p>
           </div>
         ))}
       </div>
