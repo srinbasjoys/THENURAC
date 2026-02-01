@@ -20,19 +20,19 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 bg-cosset-cream shadow-sm">
       {/* Announcement Bar */}
-      <div className="bg-[#9b8676] text-white text-center py-2 text-sm tracking-wider">
+      <div className="bg-cosset-brown text-white text-center py-2 text-sm tracking-wider">
         HAPPY NEW YEAR 2026!
       </div>
 
       {/* Main Header */}
-      <div className="border-b border-gray-200">
+      <div className="border-b border-cosset-tan/30">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-4">
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden"
+              className="lg:hidden text-cosset-text"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -40,10 +40,10 @@ const Header = () => {
 
             {/* Logo */}
             <Link to="/" className="text-center flex-1 lg:flex-initial">
-              <h1 className="text-2xl tracking-[0.3em] font-light text-[#7a6a5b]">
+              <h1 className="text-2xl tracking-[0.3em] font-light text-cosset-dark-brown">
                 THENURA
               </h1>
-              <p className="text-[10px] tracking-[0.2em] text-[#9b8676]">CLOTHING</p>
+              <p className="text-[10px] tracking-[0.2em] text-cosset-brown">CLOTHING</p>
             </Link>
 
             {/* Desktop Navigation */}
@@ -52,7 +52,7 @@ const Header = () => {
                 <Link
                   key={item.label}
                   to={item.path}
-                  className="text-xs tracking-wider text-gray-700 hover:text-[#9b8676] transition-colors"
+                  className="text-xs tracking-wider text-cosset-text hover:text-cosset-brown transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -60,26 +60,26 @@ const Header = () => {
             </nav>
 
             {/* Right Icons */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 text-cosset-text">
               <button 
                 onClick={() => navigate('/profile')}
-                className="hover:text-[#9b8676] transition-colors"
+                className="hover:text-cosset-brown transition-colors"
               >
                 <User size={20} />
               </button>
               <button 
                 onClick={() => navigate('/search')}
-                className="hover:text-[#9b8676] transition-colors"
+                className="hover:text-cosset-brown transition-colors"
               >
                 <Search size={20} />
               </button>
               <button 
                 onClick={() => navigate('/cart')}
-                className="hover:text-[#9b8676] transition-colors relative"
+                className="hover:text-cosset-brown transition-colors relative"
               >
                 <ShoppingBag size={20} />
                 {getCartCount() > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-[#9b8676] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 bg-cosset-brown text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                     {getCartCount()}
                   </span>
                 )}
