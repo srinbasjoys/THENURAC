@@ -13,9 +13,9 @@ const ProductCard = ({ product, showBadge = false }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Product Image */}
-        <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 mb-3">
+        <div className="relative aspect-[3/4] overflow-hidden bg-cosset-beige/30 mb-3">
           {showBadge && product.badge && (
-            <Badge className="absolute top-3 left-3 bg-[#9b8676] text-white text-xs z-10">
+            <Badge className="absolute top-3 left-3 bg-cosset-brown text-white text-xs z-10">
               {product.badge}
             </Badge>
           )}
@@ -30,8 +30,8 @@ const ProductCard = ({ product, showBadge = false }) => {
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           {/* Choose Options Button - Shows on Hover */}
-          <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 py-3 text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <button className="text-xs tracking-wider font-medium hover:text-[#9b8676] transition-colors">
+          <div className="absolute bottom-0 left-0 right-0 bg-cosset-cream bg-opacity-95 py-3 text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <button className="text-xs tracking-wider font-medium hover:text-cosset-brown transition-colors text-cosset-text">
               View Details
             </button>
           </div>
@@ -39,17 +39,17 @@ const ProductCard = ({ product, showBadge = false }) => {
 
         {/* Product Info */}
         <div className="text-center">
-          <h3 className="text-sm mb-2 hover:text-[#9b8676] transition-colors cursor-pointer">
+          <h3 className="text-sm mb-2 hover:text-cosset-brown transition-colors cursor-pointer text-cosset-text">
             {product.name}
           </h3>
           <div className="flex items-center justify-center gap-2 mb-2">
             {product.originalPrice ? (
               <>
-                <span className="text-sm font-medium">Rs {product.price.toLocaleString('en-IN')}</span>
-                <span className="text-sm text-gray-400 line-through">Rs {product.originalPrice.toLocaleString('en-IN')}</span>
+                <span className="text-sm font-medium text-cosset-dark-brown">Rs {product.price.toLocaleString('en-IN')}</span>
+                <span className="text-sm text-cosset-text/40 line-through">Rs {product.originalPrice.toLocaleString('en-IN')}</span>
               </>
             ) : (
-              <span className="text-sm font-medium">Rs {product.price.toLocaleString('en-IN')}</span>
+              <span className="text-sm font-medium text-cosset-dark-brown">Rs {product.price.toLocaleString('en-IN')}</span>
             )}
           </div>
 
@@ -59,7 +59,7 @@ const ProductCard = ({ product, showBadge = false }) => {
               {product.colors.slice(0, 5).map((color, index) => (
                 <div
                   key={index}
-                  className="w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center cursor-pointer hover:border-[#9b8676] transition-colors"
+                  className="w-5 h-5 rounded-full border border-cosset-tan flex items-center justify-center cursor-pointer hover:border-cosset-brown transition-colors"
                   title={color}
                 >
                   <div
