@@ -91,13 +91,13 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-gray-200">
+        <div className="lg:hidden bg-cosset-cream border-b border-cosset-tan/30">
           <nav className="container mx-auto px-4 py-4 space-y-3">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 to={item.path}
-                className="block text-sm tracking-wider text-gray-700 hover:text-[#9b8676] transition-colors"
+                className="block text-sm tracking-wider text-cosset-text hover:text-cosset-brown transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
