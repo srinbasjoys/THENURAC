@@ -17,9 +17,9 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-cosset-cream">
       {/* Hero Section */}
-      <section className="relative h-[600px] bg-[#d4c4b0]">
+      <section className="relative h-[600px] bg-cosset-tan">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=2000&q=80"
@@ -36,7 +36,7 @@ const Home = () => {
               <Link to="/shop">
                 <Button
                   variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-gray-900 transition-colors mt-4"
+                  className="bg-transparent border-white text-white hover:bg-white hover:text-cosset-text transition-colors mt-4"
                 >
                   DISCOVER NOW
                 </Button>
@@ -50,17 +50,17 @@ const Home = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-light tracking-wider">NEW ARRIVALS</h2>
+            <h2 className="text-3xl font-light tracking-wider text-cosset-dark-brown">NEW ARRIVALS</h2>
             <div className="flex gap-2">
               <button
                 onClick={() => scroll(newArrivalsRef, 'left')}
-                className="p-2 border border-gray-300 hover:border-[#9b8676] transition-colors"
+                className="p-2 border border-cosset-tan hover:border-cosset-brown transition-colors text-cosset-text"
               >
                 <ChevronLeft size={20} />
               </button>
               <button
                 onClick={() => scroll(newArrivalsRef, 'right')}
-                className="p-2 border border-gray-300 hover:border-[#9b8676] transition-colors"
+                className="p-2 border border-cosset-tan hover:border-cosset-brown transition-colors text-cosset-text"
               >
                 <ChevronRight size={20} />
               </button>
@@ -78,7 +78,7 @@ const Home = () => {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link to="/new-arrivals" className="text-sm tracking-wider underline hover:text-[#9b8676] transition-colors">
+            <Link to="/new-arrivals" className="text-sm tracking-wider underline hover:text-cosset-brown transition-colors text-cosset-text">
               View All
             </Link>
           </div>
@@ -86,11 +86,11 @@ const Home = () => {
       </section>
 
       {/* All Time Bestsellers Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-cosset-beige">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-light tracking-wider mb-3">ALL TIME BESTSELLERS</h2>
-            <p className="text-sm text-gray-600 italic">Designed to elevate your everyday style, anywhere.</p>
+            <h2 className="text-3xl font-light tracking-wider mb-3 text-cosset-dark-brown">ALL TIME BESTSELLERS</h2>
+            <p className="text-sm text-cosset-text/70 italic">Designed to elevate your everyday style, anywhere.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {bestSellers.map((product) => (
