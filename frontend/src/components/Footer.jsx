@@ -91,9 +91,9 @@ const Footer = () => {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-gray-200 py-6">
+      <div className="border-t border-cosset-tan/30 py-6">
         <div className="container mx-auto px-4">
-          <p className="text-xs text-gray-500 text-center">
+          <p className="text-xs text-cosset-text/60 text-center">
             © 2026 - THENURA CLOTHING
           </p>
         </div>
