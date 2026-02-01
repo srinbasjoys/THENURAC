@@ -50,18 +50,18 @@ const Shop = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-light tracking-wider mb-8">{getPageTitle()}</h1>
+    <div className="container mx-auto px-4 py-12 bg-cosset-cream min-h-screen">
+      <h1 className="text-3xl font-light tracking-wider mb-8 text-cosset-dark-brown">{getPageTitle()}</h1>
 
       {/* Sort Options */}
       <div className="flex justify-between items-center mb-8">
-        <p className="text-gray-600">
+        <p className="text-cosset-text/70">
           {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
         </p>
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9b8676]"
+          className="px-4 py-2 border border-cosset-tan rounded-md focus:outline-none focus:ring-2 focus:ring-cosset-brown bg-cosset-cream text-cosset-text"
         >
           <option value="featured">Featured</option>
           <option value="price-low">Price: Low to High</option>
@@ -78,7 +78,7 @@ const Shop = () => {
 
       {filteredProducts.length === 0 && (
         <div className="text-center py-20">
-          <p className="text-gray-600 text-lg">No products found.</p>
+          <p className="text-cosset-text/70 text-lg">No products found.</p>
         </div>
       )}
     </div>
