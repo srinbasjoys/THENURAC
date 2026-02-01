@@ -45,8 +45,8 @@ const Profile = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-light tracking-wider mb-8">My Account</h1>
+    <div className="container mx-auto px-4 py-12 bg-cosset-cream min-h-screen">
+      <h1 className="text-3xl font-light tracking-wider mb-8 text-cosset-dark-brown">My Account</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Sidebar */}
@@ -56,8 +56,8 @@ const Profile = () => {
               onClick={() => setActiveTab('profile')}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                 activeTab === 'profile'
-                  ? 'bg-[#9b8676] text-white'
-                  : 'hover:bg-gray-100'
+                  ? 'bg-cosset-brown text-white'
+                  : 'hover:bg-cosset-beige text-cosset-text'
               }`}
             >
               <User size={20} />
@@ -67,8 +67,8 @@ const Profile = () => {
               onClick={() => setActiveTab('orders')}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                 activeTab === 'orders'
-                  ? 'bg-[#9b8676] text-white'
-                  : 'hover:bg-gray-100'
+                  ? 'bg-cosset-brown text-white'
+                  : 'hover:bg-cosset-beige text-cosset-text'
               }`}
             >
               <Package size={20} />
@@ -78,8 +78,8 @@ const Profile = () => {
               onClick={() => setActiveTab('wishlist')}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                 activeTab === 'wishlist'
-                  ? 'bg-[#9b8676] text-white'
-                  : 'hover:bg-gray-100'
+                  ? 'bg-cosset-brown text-white'
+                  : 'hover:bg-cosset-beige text-cosset-text'
               }`}
             >
               <Heart size={20} />
@@ -89,8 +89,8 @@ const Profile = () => {
               onClick={() => setActiveTab('settings')}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                 activeTab === 'settings'
-                  ? 'bg-[#9b8676] text-white'
-                  : 'hover:bg-gray-100'
+                  ? 'bg-cosset-brown text-white'
+                  : 'hover:bg-cosset-beige text-cosset-text'
               }`}
             >
               <Settings size={20} />
@@ -106,35 +106,38 @@ const Profile = () => {
         {/* Content */}
         <div className="md:col-span-3">
           {activeTab === 'profile' && (
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h2 className="text-2xl font-light mb-6">Profile Information</h2>
+            <div className="bg-white border border-cosset-tan/30 rounded-lg p-6">
+              <h2 className="text-2xl font-light mb-6 text-cosset-dark-brown">Profile Information</h2>
               <div className="space-y-4">
                 <div>
-                  <Label htmlFor="name">Full Name</Label>
+                  <Label htmlFor="name" className="text-cosset-text">Full Name</Label>
                   <Input
                     id="name"
                     value={userInfo.name}
                     onChange={(e) => setUserInfo({ ...userInfo, name: e.target.value })}
+                    className="border-cosset-tan"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="email">Email Address</Label>
+                  <Label htmlFor="email" className="text-cosset-text">Email Address</Label>
                   <Input
                     id="email"
                     type="email"
                     value={userInfo.email}
                     onChange={(e) => setUserInfo({ ...userInfo, email: e.target.value })}
+                    className="border-cosset-tan"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="phone">Phone Number</Label>
+                  <Label htmlFor="phone" className="text-cosset-text">Phone Number</Label>
                   <Input
                     id="phone"
                     value={userInfo.phone}
                     onChange={(e) => setUserInfo({ ...userInfo, phone: e.target.value })}
+                    className="border-cosset-tan"
                   />
                 </div>
-                <Button className="bg-[#9b8676] hover:bg-[#8a7969] text-white">
+                <Button className="bg-cosset-brown hover:bg-cosset-dark-brown text-white">
                   Save Changes
                 </Button>
               </div>
@@ -143,13 +146,13 @@ const Profile = () => {
 
           {activeTab === 'orders' && (
             <div className="space-y-4">
-              <h2 className="text-2xl font-light mb-6">Order History</h2>
+              <h2 className="text-2xl font-light mb-6 text-cosset-dark-brown">Order History</h2>
               {orders.map((order) => (
-                <div key={order.id} className="bg-white border border-gray-200 rounded-lg p-6">
+                <div key={order.id} className="bg-white border border-cosset-tan/30 rounded-lg p-6">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <p className="font-medium">Order #{order.id}</p>
-                      <p className="text-sm text-gray-600">{order.date}</p>
+                      <p className="font-medium text-cosset-text">Order #{order.id}</p>
+                      <p className="text-sm text-cosset-text/70">{order.date}</p>
                     </div>
                     <span
                       className={`px-3 py-1 rounded-full text-sm ${
@@ -162,8 +165,8 @@ const Profile = () => {
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <p className="text-gray-600">{order.items} items</p>
-                    <p className="font-medium text-lg">Rs {order.total.toLocaleString('en-IN')}</p>
+                    <p className="text-cosset-text/70">{order.items} items</p>
+                    <p className="font-medium text-lg text-cosset-dark-brown">Rs {order.total.toLocaleString('en-IN')}</p>
                   </div>
                 </div>
               ))}
@@ -172,15 +175,15 @@ const Profile = () => {
 
           {activeTab === 'wishlist' && (
             <div>
-              <h2 className="text-2xl font-light mb-6">My Wishlist</h2>
+              <h2 className="text-2xl font-light mb-6 text-cosset-dark-brown">My Wishlist</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {wishlist.map((item) => (
-                  <div key={item.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                  <div key={item.id} className="bg-white border border-cosset-tan/30 rounded-lg overflow-hidden">
                     <img src={item.image} alt={item.name} className="w-full h-64 object-cover" />
                     <div className="p-4">
-                      <h3 className="font-medium mb-2">{item.name}</h3>
-                      <p className="text-lg font-medium mb-3">Rs {item.price.toLocaleString('en-IN')}</p>
-                      <Button className="w-full bg-[#9b8676] hover:bg-[#8a7969] text-white">
+                      <h3 className="font-medium mb-2 text-cosset-text">{item.name}</h3>
+                      <p className="text-lg font-medium mb-3 text-cosset-dark-brown">Rs {item.price.toLocaleString('en-IN')}</p>
+                      <Button className="w-full bg-cosset-brown hover:bg-cosset-dark-brown text-white">
                         Add to Cart
                       </Button>
                     </div>
@@ -191,16 +194,16 @@ const Profile = () => {
           )}
 
           {activeTab === 'settings' && (
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h2 className="text-2xl font-light mb-6">Account Settings</h2>
+            <div className="bg-white border border-cosset-tan/30 rounded-lg p-6">
+              <h2 className="text-2xl font-light mb-6 text-cosset-dark-brown">Account Settings</h2>
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-medium mb-3">Change Password</h3>
+                  <h3 className="font-medium mb-3 text-cosset-text">Change Password</h3>
                   <div className="space-y-3">
-                    <Input type="password" placeholder="Current Password" />
-                    <Input type="password" placeholder="New Password" />
-                    <Input type="password" placeholder="Confirm New Password" />
-                    <Button className="bg-[#9b8676] hover:bg-[#8a7969] text-white">
+                    <Input type="password" placeholder="Current Password" className="border-cosset-tan" />
+                    <Input type="password" placeholder="New Password" className="border-cosset-tan" />
+                    <Input type="password" placeholder="Confirm New Password" className="border-cosset-tan" />
+                    <Button className="bg-cosset-brown hover:bg-cosset-dark-brown text-white">
                       Update Password
                     </Button>
                   </div>
