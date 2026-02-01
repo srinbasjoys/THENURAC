@@ -5,26 +5,26 @@ import { Input } from './ui/input';
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-200 mt-20">
+    <footer className="bg-cosset-beige border-t border-cosset-tan/30 mt-20">
       {/* Features Section */}
-      <div className="border-b border-gray-200 py-12">
+      <div className="border-b border-cosset-tan/30 py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <h3 className="text-sm font-medium mb-2">India Proud</h3>
-              <p className="text-xs text-gray-600">Women led brand, homegrown slow fashion brand.</p>
+              <h3 className="text-sm font-medium mb-2 text-cosset-dark-brown">India Proud</h3>
+              <p className="text-xs text-cosset-text/70">Women led brand, homegrown slow fashion brand.</p>
             </div>
             <div>
-              <h3 className="text-sm font-medium mb-2">CUSTOMER SUPPORT</h3>
-              <p className="text-xs text-gray-600">Available from Monday to Saturday, 10 am to 7 pm.</p>
+              <h3 className="text-sm font-medium mb-2 text-cosset-dark-brown">CUSTOMER SUPPORT</h3>
+              <p className="text-xs text-cosset-text/70">Available from Monday to Saturday, 10 am to 7 pm.</p>
             </div>
             <div>
-              <h3 className="text-sm font-medium mb-2">FREE SHIPPING</h3>
-              <p className="text-xs text-gray-600">Free shipping & more perks on all Prepaid Orders.</p>
+              <h3 className="text-sm font-medium mb-2 text-cosset-dark-brown">FREE SHIPPING</h3>
+              <p className="text-xs text-cosset-text/70">Free shipping & more perks on all Prepaid Orders.</p>
             </div>
             <div>
-              <h3 className="text-sm font-medium mb-2">Secure payments</h3>
-              <p className="text-xs text-gray-600">Safer, faster, and more secure online payment.</p>
+              <h3 className="text-sm font-medium mb-2 text-cosset-dark-brown">Secure payments</h3>
+              <p className="text-xs text-cosset-text/70">Safer, faster, and more secure online payment.</p>
             </div>
           </div>
         </div>
